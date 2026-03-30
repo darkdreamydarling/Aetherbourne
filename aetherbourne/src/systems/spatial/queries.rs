@@ -1,1 +1,0 @@
-// radius, nearest, LOS
