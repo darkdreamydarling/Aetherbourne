@@ -88,6 +88,9 @@ aetherbourne/
 │   │   │   │   ├── mod.rs
 │   │   │   │   ├── spread.rs
 │   │   │   ├── fauna/
+│   │   │   │   ├── combat.rs
+│   │   │   │   ├── consumption.rs
+│   │   │   │   ├── interaction.rs
 │   │   │   │   ├── metabolism.rs
 │   │   │   │   ├── mod.rs
 │   │   │   │   ├── movement.rs
@@ -109,18 +112,26 @@ aetherbourne/
 │   │   │   └── combat.rs
 │   │   ├── interaction/
 │   │   │   ├── mod.rs
-│   │   │   ├── affordances.rs
-│   │   │   ├── rules.rs
-│   │   │   └── resolver.rs
+│   │   │   ├── affordances/
+│   │   │   ├── rules/
+│   │   │   └── resolution/
 │   │   ├── civilization/
 │   │   │   ├── mod.rs
 │   │   │   ├── settlement.rs
 │   │   │   ├── economy.rs
-│   │   │   └── expansion.rs
+│   │   │   ├── expansion.rs
+│   │   │   ├── ai/
+│   │   │   └── logistics/
 │   │   ├── events/
 │   │   │   ├── mod.rs
 │   │   │   ├── event.rs
-│   │   │   └── queue.rs
+│   │   │   ├── queue.rs
+│   │   │   ├── dispatch.rs
+│   │   │   └── handlers/
+│   │   │       ├── mod.rs
+│   │   │       ├── environment.rs
+│   │   │       ├── biology.rs
+│   │   │       └── civilization.rs
 │   │   └── meta/
 │   │       ├── mod.rs
 │   │       ├── danger.rs
