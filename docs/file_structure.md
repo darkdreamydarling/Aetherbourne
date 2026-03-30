@@ -82,8 +82,16 @@ aetherbourne/
 │   │   │   └── minerals.rs
 │   │   ├── biology/
 │   │   │   ├── mod.rs
-│   │   │   ├── flora.rs
-│   │   │   ├── fauna.rs
+│   │   │   ├── flora/
+│   │   │   │   ├── decay.rs
+│   │   │   │   ├── growth.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── spread.rs
+│   │   │   ├── fauna/
+│   │   │   │   ├── metabolism.rs
+│   │   │   │   ├── mod.rs
+│   │   │   │   ├── movement.rs
+│   │   │   │   ├── reproduction.rs
 │   │   │   ├── ecosystem.rs
 │   │   │   └── evolution.rs
 │   │   ├── cognition/
@@ -134,25 +142,28 @@ aetherbourne/
 │   │   ├── renderer.rs
 │   │   ├── camera_view.rs
 │   │   ├── snapshot.rs
-│   │   ├── terrain/
-│   │   ├── sprites/
-│   │   └── overlays/
-│   ├── ui/
-│   │   ├── mod.rs
-│   │   ├── ui.rs
-│   │   ├── panel.rs
-│   │   ├── text.rs
-│   │   ├── inspector/
-│   │   └── overlays/
-│   ├── debug/
-│   │   ├── mod.rs
-│   │   ├── logging.rs
-│   │   ├── metrics.rs
-│   │   ├── tracing.rs
-│   │   └── debug_draw.rs
-│   └── utils/
-│       ├── mod.rs
-│       ├── random.rs
+│   │   ├── interaction/
+│   │   │   ├── mod.rs
+│   │   │   ├── rules/
+│   │   │   ├── resolution/
+│   │   │   └── affordances/
+│   │   ├── civilization/
+│   │   │   ├── mod.rs
+│   │   │   ├── settlement.rs
+│   │   │   ├── economy.rs
+│   │   │   ├── expansion.rs
+│   │   │   ├── ai/
+│   │   │   └── logistics/
+│   │   ├── events/
+│   │   │   ├── mod.rs
+│   │   │   ├── event.rs
+│   │   │   ├── queue.rs
+│   │   │   ├── dispatch.rs
+│   │   │   └── handlers/
+│   │   │       ├── mod.rs
+│   │   │       ├── environment.rs
+│   │   │       ├── biology.rs
+│   │   │       └── civilization.rs
 │       ├── math.rs
 │       ├── color.rs
 │       └── timing.rs
