@@ -1,1 +1,0 @@
-// step mode, tick control
