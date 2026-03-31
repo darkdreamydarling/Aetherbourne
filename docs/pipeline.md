@@ -1,3 +1,0 @@
-# Pipeline
-
-Simulation pipeline documentation.

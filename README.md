@@ -70,13 +70,16 @@ Reality → Perception → Memory → Belief → Intent → Attention → Decisi
 ## World & Environment
 
 * [World Systems](docs/world-systems.md) — Biomes, minerals, flora, weather, structures, generation pipeline
+* [Spatial System](docs/spatial-system.md) — Spatial partitioning, world layout, coordinate systems
+* [Time & Calendar](docs/time-calendar.md) — Time simulation, seasons, calendar system
+* [Weather](docs/weather.md) — Weather patterns, climate effects, environmental conditions
 * [Entities & Biology](docs/entities.md) — Character framework, lifecycle, morphology, relationships
 * [Evolution & Genetics](docs/evolution-genetics.md) — Environmental pressure, DNA, niche formation, population dynamics
 
 ## Behavior & Cognition
 
 * [Behavior Systems](docs/behavior-systems.md) — Perception, memory, belief, intent, attention, decision-making pipeline
-* [Personality](docs/philosophy.md#personality-system-waterfall) — Waterfall approach, trait dimensions
+* [Affordances](docs/affordances.md) — Interactive possibilities, perception of opportunities, action opportunities
 
 ## Civilization & Culture
 
@@ -86,6 +89,8 @@ Reality → Perception → Memory → Belief → Intent → Attention → Decisi
 
 * [Items System](docs/items.md) — Crafting, inventory, trading, lifecycle, properties
 * [Actions Reference](docs/actions.md) — Action tables, stat→speed, skill→potency formulas, mechanics
+* [Interaction Engine](docs/interaction-engine.md) — Interaction systems, resolution, mechanics
+* [File Structure](docs/file_structure.md) — Project layout, file organization, codebase structure
 
 ---
 

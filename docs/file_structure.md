@@ -19,10 +19,19 @@ aetherbourne/
 │       ├── templates/
 │       └── generated/
 ├── docs/
-│   ├── architecture.md
-│   ├── pipeline.md
-│   ├── systems.md
-│   └── file_structure.md  # <--- this file
+│   ├── actions.md
+│   ├── affordances.md
+│   ├── behavior-systems.md
+│   ├── civilization-culture.md
+│   ├── entities.md
+│   ├── file_structure.md  # <--- this file
+│   ├── interaction-engine.md
+│   ├── items.md
+│   ├── philosophy.md
+│   ├── spatial-system.md
+│   ├── time-calender.md
+│   ├── weather.md
+│   └── world-systems.md
 ├── src/
 │   ├── main.rs
 │   ├── app/
