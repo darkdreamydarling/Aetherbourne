@@ -26,25 +26,13 @@
 # 🧩 Core Simulation Layers
 
 ## 1. Reality Layer
-
-* Biomes, Weather, Time
-* Minerals, Flora, Structures
-* Spatial system
+The reality layer encompasses seasons, biomes, and the flow of entropy. It includes minerals and flora, as well as fauna and man-made or natural structures. All of these exist within a defined spatial system.
 
 ## 2. Biology Layer
-
-* Species definitions
-* Stats & derived stats
-* Needs & energy
-* Morphology & traits
+The biology layer defines species and their characteristics. It includes base stats and derived stats, tracks needs and energy, and details morphology and traits.
 
 ## 3. Mind Layer
-
-* Perception (subjective reality)
-* Memory (decaying)
-* Beliefs (persistent bias)
-* Personality (waterfall model)
-* Attention system
+The mind layer governs perception, which represents each entity’s subjective reality. It stores memory, which decays over time, and maintains beliefs that create persistent biases. Personality is modeled using a waterfall approach, and an attention system regulates focus.
 
 ## 4. Intent Layer
 
