@@ -488,7 +488,7 @@ Dynamic weather affects resource availability, character comfort, travel, and wo
 | Imbrelle | Winter | 32 |
 | Florayne | Spring | 30 |
 | Lithara | Spring | 26 |
-Fulthane
+FulthaneVivmora
 | Heliora | Summer | 31 |
 | Aestara | Summer | 29 |
 | Mavonel | Summer | 33 |
