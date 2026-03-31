@@ -1,0 +1,18 @@
+{
+    "diffEditor.wordWrap": "off",
+    "[prompt]": {
+        "editor.wordWrap": "off"
+    },
+    "[skill]": {
+        "editor.wordWrap": "off"
+    },
+    "[markdown]": {
+        "editor.wordWrap": "off"
+    },
+    "[instructions]": {
+        "editor.wordWrap": "off"
+    },
+    "[chatagent]": {
+        "editor.wordWrap": "off"
+    }
+}
