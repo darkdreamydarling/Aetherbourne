@@ -2,7 +2,7 @@
 
 A unified simulation framework where **reality emerges from interconnected systems**, not scripts.
 
-**Core Principle:**
+## Core Principle:
 
 ```
 Reality → Perception → Memory → Belief → Intent → Attention → Decision → Action → Feedback
@@ -10,39 +10,50 @@ Reality → Perception → Memory → Belief → Intent → Attention → Decisi
 
 ---
 
-# 🎯 Quick Reference
+## Project Philosophy
 
-## Base Stats (0–10)
-
-| Stat | Definition |
-|------|-----------|
-| **Might** | Force output |
-| **Lithe** | Agility & efficiency |
-| **Vigil** | Awareness & perception |
-| **Grit** | Resilience & persistence |
-| **Vigor** | Endurance & recovery |
-
-**Derived Formula:** `(A + B) / 2` optional `+ (A * B) * 0.05`
+* **Observer-centric simulation**: The world is simulated from the perspective of observers, not omnisciently.
+* **Emergence over scripting**: Behaviors and events arise from systems, not hardcoded scripts.
+* **Cause → Effect → Feedback Loops**: Every action produces consequences that feed back into the system.
 
 ---
 
-## Core Needs (0–100)
+## Core Mental Model
 
-| Need | Drain Rate | Purpose |
-|------|-----------|---------|
-| Hunger | 1.0 | Nutrition |
-| Thirst | 1.0 | Hydration |
-| Warmth | 1.0 | Temperature regulation |
-| Comfort | 0.75 | Safety & wellbeing |
-| Health | 0.5 | Vitality |
-| Reproduction | — | Breeding |
-| Social | 0.5 | Connection |
-| Fulfillment | 0.5 | Purpose |
-| Waste | 1.0 | Hygiene |
+* **Biology defines capability**
+* **Perception defines reality**
+* **Needs drive decisions**
+* **Memory shapes behavior**
+* **Beliefs bias interpretation**
+* **Intent drives action**
+* **Systems create emergence**
 
 ---
 
-# 🔁 Core Simulation Loop
+## Core Simulation Layers
+
+### 1. Reality Layer
+The reality layer encompasses seasons, biomes, and the flow of entropy. It includes minerals and flora, as well as fauna and man-made or natural structures. All of these exist within a defined spatial system.
+
+### 2. Biology Layer
+The biology layer defines species and their characteristics. It includes base stats and derived stats, tracks needs and energy, and details morphology and traits.
+
+### 3. Mind Layer
+The mind layer governs perception, which represents each entity's subjective reality. It stores memory, which decays over time, and maintains beliefs that create persistent biases. Personality is modeled using a waterfall approach, and an attention system regulates focus.
+
+### 4. Intent Layer
+
+```
+Intent = f(Needs + Personality + Memory + Beliefs)
+```
+
+### 5. Action Layer
+
+* Movement, Combat, Crafting, Interaction, Survival, Communication
+
+---
+
+## 🔁 Core Simulation Loop
 
 1. Environment updates
 2. Geology updates
@@ -62,10 +73,6 @@ Reality → Perception → Memory → Belief → Intent → Attention → Decisi
 ---
 
 # 📚 Documentation Map
-
-## Foundation & Philosophy
-
-* [Philosophy & Mental Model](docs/philosophy.md) — Project principles, simulation layers, core concept
 
 ## World & Environment
 
@@ -91,43 +98,6 @@ Reality → Perception → Memory → Belief → Intent → Attention → Decisi
 * [Actions Reference](docs/actions.md) — Action tables, stat→speed, skill→potency formulas, mechanics
 * [Interaction Engine](docs/interaction-engine.md) — Interaction systems, resolution, mechanics
 * [File Structure](docs/file_structure.md) — Project layout, file organization, codebase structure
-
----
-
-# 🧭 Core Principles
-
-## Observer-Centric Simulation
-The world is simulated from each entity's subjective perspective, not omnisciently. Entities perceive limited information shaped by their senses and experience.
-
-## Emergence Over Scripting
-Behaviors and events arise from systems interacting, not hardcoded scripts. A creature's actions emerge from its personality, memories, needs, and environment.
-
-## Cause → Effect → Feedback Loops
-Every action produces consequences that feed back into the system. Reproduction shapes evolution; culture shapes genetics; behavior shapes environment.
-
----
-
-# 🧠 Core Mental Model
-
-* **Biology defines capability** — Stats limit what entities can do
-* **Perception defines reality** — Entities act on what they perceive, not objective truth
-* **Needs drive decisions** — Unsatisfied needs create intent and bias attention
-* **Memory shapes behavior** — Past experiences consolidate into beliefs
-* **Beliefs bias interpretation** — Entities interpret new events through existing beliefs
-* **Intent drives action** — Current goals prioritize which actions to take
-* **Systems create emergence** — Individual behaviors aggregate into civilization, culture, evolution
-
----
-
-# 🧩 Simulation Layers
-
-**5-Layer Model:**
-
-1. **Reality Layer** — Objective world state (biomes, weather, resources, terrain)
-2. **Biology Layer** — Species characteristics (stats, needs, morphology, traits, DNA)
-3. **Mind Layer** — Subjective experience (perception, memory, beliefs, personality)
-4. **Intent Layer** — Motivation and desire (needs drive goals, filtered by personality)
-5. **Action Layer** — Behavior execution (movement, interaction, communication, crafting)
 
 ---
 
