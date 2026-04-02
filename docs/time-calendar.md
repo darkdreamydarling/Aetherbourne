@@ -9,7 +9,7 @@ The Aetherbourne world operates on a consistent calendar that governs seasons, w
 ### Year Structure
 
 * **Days per Year**: 300
-* **Months per Year**: 10
+* **Months per Year**: 12
 * **Total Verification**: 28+32+30+26+31+29+33+27+34+30 = 300 days ✓
 
 ### Week Structure

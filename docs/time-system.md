@@ -40,12 +40,11 @@ pub const TICK_OPTIONS: &[(f32, &str)] = &[
 ```
 1 Tick          = configurable (default: 1 second)
 60 Ticks        = 1 Minute (default)
-3,600 Ticks     = 1 Hour (default)
-86,400 Ticks    = 1 Day (default: ~24 hours)
-604,800 Ticks   = 1 Week (8 days in Aetherbourne calendar)
-2,592,000 Ticks = 1 Week (default, 30 days)
----
+60 Minutes      = 1 Hour (default)
+24 Hours        = 1 Day (default: ~24 hours)
+8 Days          = 1 Week (8 days in Aetherbourne calendar)
 300 Days        = 1 Year
+1 Year          = 12 Months
 ```
 
 ### Detailed Calendar Structure
@@ -102,19 +101,20 @@ pub fn ticks_to_calendar(ticks: u64) -> CalendarDate {
 
 ### Month Descriptions (From time-calendar.md)
 
-| Month | Days | Season | Character | Element |
-|-------|------|--------|-----------|---------|
-| **Brigara** | 28 | Winter | Absolute stillness; order solidifies | Solid |
-| **Imbrelle** | 32 | Winter | Hidden movement; resource management | Liquid |
-| **Florayne** | 30 | Spring | Winds of change; unpredictability | Gas |
-| **Lithara** | 26 | Spring | Sparks of creation; rapid beginnings | Plasma |
-| **Fulthane** | 30 | Spring | Foundations; deliberate growth | Solid |
-| **Heliora** | 31 | Summer | Overflow; flourishing life | Liquid |
-| **Aestara** | 29 | Summer | Ascendant currents; expansion peaks | Gas |
-| **Mavonel** | 33 | Summer | Controlled radiance; sustained output | Plasma |
-| **Ceresen** | 27 | Autumn | Fracture; breakdown of forms | Solid |
-| **Vivmora** | 30 | Autumn | Gathering waters; preservation | Liquid |
-
+| Month        | Season | Length (days) | Cultural Significance                                                                   | Element | Element Qualities |
+| ------------ | ------ | ------------- | --------------------------------------------------------------------------------------- | ------- | ----------------- |
+| **Brigara**  | Winter | 28            | Season of Dominion; absolute stillness, structures endure, authority and order solidify | Solid   | Preeminent        |
+| **Imbrelle** | Winter | 32            | Season of Flow Under Ice; hidden movement, resource management, quiet endurance         | Liquid  | Determinate       |
+| **Florayne** | Spring | 30            | Season of Winds of Change; unpredictability, shifting paths, discovery and dispersal    | Gas     | Mercurial         |
+| **Lithara**  | Spring | 26            | Season of Ignition; sparks of creation, innovation, rapid beginnings                    | Plasma  | Preeminent        |
+| **Fulthane** | Spring | 30            | Season of Foundations; planting, building roots, deliberate growth                      | Solid   | Determinate       |
+| **Heliora**  | Summer | 31            | Season of Overflow; flourishing life, emotional and ecological abundance                | Liquid  | Mercurial         |
+| **Aestara**  | Summer | 29            | Season of Ascendant Currents; dominant winds, expansion, trade and movement peak        | Gas     | Preeminent        |
+| **Mavonel**  | Summer | 33            | Season of Controlled Radiance; sustained energy, production, disciplined output         | Plasma  | Determinate       |
+| **Ceresen**  | Autumn | 27            | Season of Fracture; breakdown of forms, release, decay begins                           | Solid   | Mercurial         |
+| **Vivmora**  | Autumn | 30            | Season of Gathering Waters; consolidation, preservation, intentional storage            | Liquid  | Preeminent        |
+| **Yulith**   | Autumn | 34            | Season of Settling Veils; slowing winds, stabilization, planning and negotiation        | Gas     | Determinate       |
+| **Duskael**  | Winter | 30            | Season of Fading Embers; unstable energy, endings, reflection before renewal            | Plasma  | Mercurial         |
 ---
 
 ## Update Frequencies: When Each System Updates

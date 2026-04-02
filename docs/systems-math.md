@@ -10,7 +10,7 @@ All numerical systems are normalized to comparable ranges for consistency.
 
 | System | Scale | Meaning | Examples |
 |--------|-------|---------|----------|
-| **Stats** | 0–100 | Capability dimension | Might 45, Lithe 78 |
+| **Stats** | 0–10  | Capability dimension | Might 45, Lithe 78 |
 | **Skills** | 0–100 | Practice/learning | Crafting 32, Combat 61 |
 | **Needs** | 0–100 | Satisfaction deficit | Hunger 30, Thirst 65 |
 | **Health** | 0–Max | Hit points | 85/100 |
