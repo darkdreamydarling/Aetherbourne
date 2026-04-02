@@ -74,30 +74,44 @@ Intent = f(Needs + Personality + Memory + Beliefs)
 
 # 📚 Documentation Map
 
+Organized by relevance and dependency order.
+
+## Foundation (Core Types & Formulas)
+
+* [Data Schema](docs/data-schema.md) — Canonical data structures, all types/components defined
+* [Systems Math](docs/systems-math.md) — Centralized formulas, constants, calculations used everywhere
+
 ## World & Environment
 
 * [World Systems](docs/world-systems.md) — Biomes, minerals, flora, weather, structures, generation pipeline
 * [Spatial System](docs/spatial-system.md) — Spatial partitioning, world layout, coordinate systems
-* [Time & Calendar](docs/time-calendar.md) — Time simulation, seasons, calendar system
+* [Time System](docs/time-system.md) — Tick simulation, update schedules, integration
+* [Time Calendar](docs/time-calendar.md) — Seasons, months, calendar system
 * [Weather](docs/weather.md) — Weather patterns, climate effects, environmental conditions
-* [Entities & Biology](docs/entities.md) — Character framework, lifecycle, morphology, relationships
-* [Evolution & Genetics](docs/evolution-genetics.md) — Environmental pressure, DNA, niche formation, population dynamics
+* [Entities](docs/entities.md) — Character framework, lifecycle, morphology, relationships
+* [Evolution Genetics](docs/evolution-genetics.md) — Environmental pressure, DNA, niche formation, population dynamics
 
 ## Behavior & Cognition
 
 * [Behavior Systems](docs/behavior-systems.md) — Perception, memory, belief, intent, attention, decision-making pipeline
-* [Affordances](docs/affordances.md) — Interactive possibilities, perception of opportunities, action opportunities
+* [Affordance System](docs/affordance-system.md) — Detection algorithm, salience scoring, opportunities
+* [Affordances](docs/affordances.md) — Interactive possibilities, perception of action opportunities
+* [Action System](docs/action-system.md) — Utility scoring, execution, interruptions
 
-## Civilization & Culture
+## Mechanics & Interactions
 
-* [Civilization & Culture](docs/civilization-culture.md) — Settlements, roles, culture formation, feedback into biology
+* [Items](docs/items.md) — Crafting, inventory, trading, lifecycle, properties
+* [Equipment System](docs/equipment-system.md) — Slots, stat modifiers, durability, encumbrance
+* [Resource Flow System](docs/resource-flow-system.md) — Scarcity index, dynamic pricing, logistics
+* [Interaction Engine](docs/interaction-engine.md) — Priority resolution, outcomes, chains, deception
+* [Actions](docs/actions.md) — Action tables, stat→speed/skill→potency mechanics
 
-## Mechanics & Reference
+## Reference & Planning
 
-* [Items System](docs/items.md) — Crafting, inventory, trading, lifecycle, properties
-* [Actions Reference](docs/actions.md) — Action tables, stat→speed, skill→potency formulas, mechanics
-* [Interaction Engine](docs/interaction-engine.md) — Interaction systems, resolution, mechanics
+* [Civilization Culture](docs/civilization-culture.md) — Settlements, roles, culture formation, biology feedback
 * [File Structure](docs/file_structure.md) — Project layout, file organization, codebase structure
+* [Implementation Summary](docs/IMPLEMENTATION_SUMMARY.md) — Progress overview, phase status
+* [Integration Map](docs/integration-map.md) — System dependencies, verification checklists
 
 ---
 
@@ -157,7 +171,8 @@ When adding features:
 
 # 📖 Quick Start
 
-1. **Understand the philosophy:** Read [Philosophy & Mental Model](docs/philosophy.md)
-2. **Learn the core loop:** This README's Core Simulation Loop section
-3. **Pick a system to explore:** Use the Documentation Map above
-4. **Check examples:** Each doc includes worked examples and scenarios
+1. **Learn the core loop:** This README's Core Simulation Loop section
+2. **Pick a system to explore:** Use the Documentation Map above
+3. **Check examples:** Each doc includes worked examples and scenarios
+
+
