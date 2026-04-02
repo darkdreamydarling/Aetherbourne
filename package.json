@@ -1,0 +1,27 @@
+{
+  "name": "aetherbourne",
+  "version": "1.0.0",
+  "description": "- **Observer-centric simulation**: The world is simulated from the perspective of observers, not omnisciently. - **Emergence over scripting**: Behaviors and events arise from systems, not from hardcoded scripts. - **Everything is systemic, not hardcoded**: All elements interact through systems, avoiding one-off logic. - **Cause → Effect → Feedback Loops**: Every action has consequences, and feedback loops drive ongoing change.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkdreamydarling/Aetherbourne.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/darkdreamydarling/Aetherbourne/issues"
+  },
+  "homepage": "https://github.com/darkdreamydarling/Aetherbourne#readme",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}

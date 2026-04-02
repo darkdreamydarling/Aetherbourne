@@ -1,0 +1,87 @@
+const fetch = require("node-fetch");
+
+const providers = [
+  {
+    name: "groq",
+    url: "https://api.groq.com/openai/v1/chat/completions",
+    model: "llama3-70b-8192",
+    key: process.env.GROQ_API_KEY,
+    format: (prompt) => ({
+      model: "llama3-70b-8192",
+      messages: [{ role: "user", content: prompt }]
+    }),
+    headers: (key) => ({
+      "Authorization": `Bearer ${key}`,
+      "Content-Type": "application/json"
+    }),
+    parse: (res) => res.choices[0].message.content
+  },
+
+  {
+    name: "deepseek",
+    url: "https://api.deepseek.com/chat/completions",
+    model: "deepseek-chat",
+    key: process.env.DEEPSEEK_API_KEY,
+    format: (prompt) => ({
+      model: "deepseek-chat",
+      messages: [{ role: "user", content: prompt }]
+    }),
+    headers: (key) => ({
+      "Authorization": `Bearer ${key}`,
+      "Content-Type": "application/json"
+    }),
+    parse: (res) => res.choices[0].message.content
+  },
+
+  {
+    name: "gemini",
+    url: (key) =>
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,
+    key: process.env.GEMINI_API_KEY,
+    format: (prompt) => ({
+      contents: [{ parts: [{ text: prompt }] }]
+    }),
+    headers: () => ({
+      "Content-Type": "application/json"
+    }),
+    parse: (res) => res.candidates[0].content.parts[0].text
+  }
+];
+
+async function queryLLM(prompt) {
+  for (const p of providers) {
+    if (!p.key) continue;
+
+    try {
+      const response = await fetch(
+        typeof p.url === "function" ? p.url(p.key) : p.url,
+        {
+          method: "POST",
+          headers: p.headers(p.key),
+          body: JSON.stringify(p.format(prompt))
+        }
+      );
+
+      if (!response.ok) throw new Error(`${p.name} failed`);
+
+      const data = await response.json();
+      console.log(`✅ Using: ${p.name}`);
+      return p.parse(data);
+
+    } catch (err) {
+      console.log(`❌ ${p.name} failed, trying next...`);
+    }
+  }
+
+  throw new Error("All providers failed.");
+}
+
+// CLI usage
+if (require.main === module) {
+  const prompt = process.argv.slice(2).join(" ");
+  queryLLM(prompt)
+    .then(res => console.log("\n🤖 Response:\n", res))
+    .catch(err => console.error(err));
+}
+
+module.exports = { queryLLM };
