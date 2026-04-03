@@ -335,6 +335,150 @@ Entities with higher relevant trait values survive/breed more
 * **Event**: Environmental split (mountain barrier) → Subpopulation 1 evolves cold-adapted → Subpop 2 evolves heat-adapted → After 100 years & reproductive isolation → Attempt interbreeding fails → New species
 * **Timeframe**: 100–200 years (depending on pressure intensity)
 
+## 1. The DNA Genome Structure
+
+Every entity possesses a genome consisting of multiple **Genes**. Each Gene controls a specific trait or a set of related physiological properties.
+
+### 1.1. Gene Definition
+
+A Gene is the atomic unit of inheritance.
+
+```rust
+pub struct Gene {
+    pub trait_id: String,          // e.g., "thermal_insulation", "body_mass", "metabolic_rate"
+    pub allele_value: f32,         // 0.0 - 10.0 scale (normalized)
+    pub dominance: f32,            // 0.0 (recessive) to 1.0 (fully dominant)
+    pub mutation_chance: f32,      // 0.0 - 1.0 (e.g., 0.05 for 5%)
+    pub mutation_magnitude: f32,   // 0.0 - 1.0 (max shift in allele_value)
+    pub pressure_sensitivity: f32, // 0.0 - 1.0 (how much selection pressure affects this gene)
+}
+```
+
+### 1.2. The Organism Genome
+
+An organism's DNA consists of pairs of alleles (paternal and maternal).
+
+```rust
+pub struct Genome {
+    pub alleles: Vec<(Gene, Gene)>, // Paternal and Maternal pairs
+    pub mutation_history: Vec<MutationRecord>,
+}
+```
+
+## 2. Physiological Expression (Phenotype)
+
+The **Phenotype** is the expressed physical state of the entity, calculated from its DNA.
+
+### 2.1. Trait Expression Formula
+
+For each trait, the expressed value is determined by the dominance of the alleles and a blending factor.
+
+```rust
+pub fn calculate_phenotype_value(allele1: &Gene, allele2: &Gene) -> f32 {
+    let expressed_value = if allele1.dominance > allele2.dominance {
+        allele1.allele_value // Dominant allele 1
+    } else if allele2.dominance > allele1.dominance {
+        allele2.allele_value // Dominant allele 2
+    } else {
+        (allele1.allele_value + allele2.allele_value) / 2.0 // Blended/Recessive
+    };
+    
+    expressed_value.clamp(0.0, 10.0)
+}
+```
+
+### 2.2. Mapping DNA to Physiological Constants
+
+The normalized `allele_value` (0-10) is mapped to the actual physiological constants used in the `Aetherbourne Physiological Trait Impact Specification`.
+
+| Trait ID | Mapping to Physiological Property |
+| :--- | :--- |
+| `thermal_insulation` | Maps to `BodyCoveringComponent.thickness` (0.0 - 1.0) |
+| `integument_density` | Maps to `BodyCoveringComponent.density` (0.0 - 1.0) |
+| `body_mass_index` | Maps to `BodyMassComponent.mass_kg` (scaled to species range) |
+| `metabolic_efficiency`| Maps to `MetabolismComponent.base_metabolism_rate` |
+| `sensory_acuity` | Maps to `Vigil` stat and perception ranges |
+
+**Example Mapping (Body Mass):**
+`expressed_mass_kg = species_min_mass + (expressed_value / 10.0) * (species_max_mass - species_min_mass)`
+
+## 3. Inheritance and Mutation
+
+When two entities reproduce, the offspring's DNA is generated through recombination and mutation.
+
+### 3.1. Recombination (Crossover)
+
+The offspring inherits one allele from each parent for every gene.
+
+```rust
+pub fn inherit_dna(parent1: &Genome, parent2: &Genome) -> Genome {
+    let mut offspring_alleles = Vec::new();
+    for i in 0..parent1.alleles.len() {
+        let p1_choice = if random() > 0.5 { &parent1.alleles[i].0 } else { &parent1.alleles[i].1 };
+        let p2_choice = if random() > 0.5 { &parent2.alleles[i].0 } else { &parent2.alleles[i].1 };
+        
+        let mut child_allele1 = p1_choice.clone();
+        let mut child_allele2 = p2_choice.clone();
+        
+        // Apply Mutation
+        apply_mutation(&mut child_allele1);
+        apply_mutation(&mut child_allele2);
+        
+        offspring_alleles.push((child_allele1, child_allele2));
+    }
+    Genome { alleles: offspring_alleles, mutation_history: Vec::new() }
+}
+```
+
+### 3.2. Mutation Logic
+
+Mutations introduce random variation into the gene pool.
+
+```rust
+pub fn apply_mutation(gene: &mut Gene) {
+    if random() < gene.mutation_chance {
+        let shift = (random() * 2.0 - 1.0) * gene.mutation_magnitude * 10.0;
+        gene.allele_value = (gene.allele_value + shift).clamp(0.0, 10.0);
+    }
+}
+```
+
+## 4. Evolutionary Selection (Survival Pressure)
+
+Survival is not guaranteed. Entities with traits poorly suited to their environment are less likely to reproduce.
+
+### 4.1. The Survival Probability Formula
+
+The probability of an entity surviving to reproductive age is a function of its physiological satisfaction and environmental pressure.
+
+```rust
+Survival_Prob = (1.0 - Hunger_Level/100) * (1.0 - Thirst_Level/100) * (1.0 - Warmth_Deficit/100) * (1.0 - Predation_Risk)
+```
+
+*   **Fur vs. Scales in Cold:** An entity with `covering_type: Scales` in a cold biome will have a high `Warmth_Deficit`, significantly lowering its `Survival_Prob`.
+*   **Mass vs. Speed:** A high `body_mass_index` reduces `Movement_Speed_Modifier`, which increases `Predation_Risk` if predators are present.
+
+### 4.2. Selection Constants
+
+| Constant Name | Value | Description |
+| :--- | :--- | :--- |
+| `BASE_MUTATION_CHANCE` | `0.05` | 5% chance per gene per generation. |
+| `BASE_MUTATION_MAGNITUDE` | `0.1` | 10% shift in allele value per mutation. |
+| `PRESSURE_ADAPTATION_RATE` | `1.5` | Multiplier for mutation chance under extreme environmental pressure. |
+
+## 5. Summary of DNA Options (Phenotype Mappings)
+
+| Trait | Genetic Marker | Impact on Physiology |
+| :--- | :--- | :--- |
+| **Covering Type** | `integument_type` | Determines `Fur`, `Scales`, `Skin`, etc. (Discrete Alleles) |
+| **Insulation** | `thermal_insulation`| Determines `thickness` of covering. |
+| **Density** | `integument_density` | Determines `density` of covering. |
+| **Mass** | `body_mass_index` | Determines total `mass_kg`. |
+| **Metabolism** | `metabolic_rate` | Determines `base_metabolism_rate`. |
+| **Efficiency** | `energy_efficiency` | Determines `thermal_efficiency` and energy drain. |
+
+This specification ensures that the biological "hardware" of your entities is as dynamic and systemic as their cognitive "software." Every physical trait is traceable to a gene, and every gene is subject to the cold, hard logic of survival.
+
 ---
 
 ## Applications in Civilization
@@ -347,4 +491,3 @@ Evolution impacts civilization through:
 4. **Cultural Pressure**: Social structures reward/punish traits → genetic selection on intelligence, cooperation, aggression
 5. **Sexual Selection**: Mate choice driven by culture → genetic change in aesthetically-favored traits (coloration, size, display)
 
-See [Civilization & Culture](civilization-culture.md) for feedback mechanisms.
