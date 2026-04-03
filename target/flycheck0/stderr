@@ -1,5 +1,5 @@
-   0.093547011s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint: fingerprint error for Aetherbourne v0.1.0 (/workspaces/Aetherbourne)/Check { test: false }/TargetInner { name: "Aetherbourne", doc: true, ..: with_path("/workspaces/Aetherbourne/src/main.rs", Edition2024) }
-   0.093572178s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/Aetherbourne/target/debug/.fingerprint/Aetherbourne-e7bca2a153f6c7a0/bin-Aetherbourne`
+   0.023458870s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint: fingerprint error for Aetherbourne v0.1.0 (/workspaces/Aetherbourne)/Check { test: false }/TargetInner { name: "Aetherbourne", doc: true, ..: with_path("/workspaces/Aetherbourne/src/main.rs", Edition2024) }
+   0.023485049s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/Aetherbourne/target/debug/.fingerprint/Aetherbourne-e7bca2a153f6c7a0/bin-Aetherbourne`
 
 Caused by:
     No such file or directory (os error 2)
@@ -43,8 +43,8 @@ Stack backtrace:
   25: __libc_start_main_impl
              at ./csu/../csu/libc-start.c:360:3
   26: <unknown>
-   0.170321638s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint: fingerprint error for Aetherbourne v0.1.0 (/workspaces/Aetherbourne)/Check { test: true }/TargetInner { name: "Aetherbourne", doc: true, ..: with_path("/workspaces/Aetherbourne/src/main.rs", Edition2024) }
-   0.170341578s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/Aetherbourne/target/debug/.fingerprint/Aetherbourne-e3c6184524336082/test-bin-Aetherbourne`
+   0.093027899s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint: fingerprint error for Aetherbourne v0.1.0 (/workspaces/Aetherbourne)/Check { test: true }/TargetInner { name: "Aetherbourne", doc: true, ..: with_path("/workspaces/Aetherbourne/src/main.rs", Edition2024) }
+   0.093053407s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="Aetherbourne"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/Aetherbourne/target/debug/.fingerprint/Aetherbourne-e3c6184524336082/test-bin-Aetherbourne`
 
 Caused by:
     No such file or directory (os error 2)
@@ -88,8 +88,8 @@ Stack backtrace:
   25: __libc_start_main_impl
              at ./csu/../csu/libc-start.c:360:3
   26: <unknown>
-   0.170657728s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="conlang_demo"}: cargo::core::compiler::fingerprint: fingerprint error for Aetherbourne v0.1.0 (/workspaces/Aetherbourne)/Check { test: false }/TargetInner { kind: "example", name: "conlang_demo", tested: false, benched: false, ..: with_path("/workspaces/Aetherbourne/examples/conlang_demo.rs", Edition2024) }
-   0.170674483s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="conlang_demo"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/Aetherbourne/target/debug/.fingerprint/Aetherbourne-390bba5841d54600/example-conlang_demo`
+   0.093399301s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="conlang_demo"}: cargo::core::compiler::fingerprint: fingerprint error for Aetherbourne v0.1.0 (/workspaces/Aetherbourne)/Check { test: false }/TargetInner { kind: "example", name: "conlang_demo", tested: false, benched: false, ..: with_path("/workspaces/Aetherbourne/examples/conlang_demo.rs", Edition2024) }
+   0.093415605s  INFO prepare_target{force=false package_id=Aetherbourne v0.1.0 (/workspaces/Aetherbourne) target="conlang_demo"}: cargo::core::compiler::fingerprint:     err: failed to read `/workspaces/Aetherbourne/target/debug/.fingerprint/Aetherbourne-390bba5841d54600/example-conlang_demo`
 
 Caused by:
     No such file or directory (os error 2)
@@ -134,7 +134,7 @@ Stack backtrace:
              at ./csu/../csu/libc-start.c:360:3
   26: <unknown>
     Checking Aetherbourne v0.1.0 (/workspaces/Aetherbourne)
-error: could not compile `Aetherbourne` (bin "Aetherbourne" test) due to 1 previous error
-warning: build failed, waiting for other jobs to finish...
 error: could not compile `Aetherbourne` (bin "Aetherbourne") due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `Aetherbourne` (bin "Aetherbourne" test) due to 1 previous error
 error: could not compile `Aetherbourne` (example "conlang_demo") due to 3 previous errors
